@@ -44,3 +44,68 @@ Design a database for patient management, appointments, medical records, and bil
 4. Explain:
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
+  
+   - ER Diagram Submission - A Pugazh sozhan
+Scenario Chosen:
+University
+
+ER Diagram:
+![438771533-b043e08a-bef4-4e3f-9fff-f6d2df360d55](https://github.com/user-attachments/assets/9c93f7a8-3dd0-4281-81b0-d1449d322363)
+Entities and Attributes:
+
+Student
+
+stuID, stuName, DOB, stuPhone, stuEmail, stuAddress
+
+Courses
+
+courseName, credits, units, courseType
+
+Enrollment
+
+enrollDate, courseID, Prerequisite
+
+Staffs
+
+staffID, staffName, staffAddress, staffPhone, staffEmail
+
+University
+
+(no attributes)
+
+Programs
+
+programID, programName, Department
+
+Relationships and Constraints
+
+Student can Enrollment (can): One student can enroll in many courses.
+
+Enrollment for Courses (for): Each enrollment is for one course.
+
+University has Student (has): One university can have many students.
+
+University offers Programs (offers): One university can offer many programs.
+
+University employee Staffs (employee): One university employs many staff members.
+
+Programs belong to University: Each program is offered by a university (implied from "offers").
+
+Extension (Prerequisite / Billing):
+
+Courses Prerequisite Courses: A course can have zero or more prerequisite courses (recursive relationship).
+
+Student Billing (bills): A student can have one or more billing records; each billing record is linked to one student.
+
+Design Choices:
+
+Clear separation of entities: The core components (Students, Courses, University, Timetable) are logically represented.
+
+Use of relationships: Proper use of diamond symbols to denote relationships like Takes, Has, and Offers.
+
+Attributes placement: Most attributes are correctly associated with their respective entities, helping normalize the data structure.
+
+Scalability: The design can be extended easily (e.g., adding Prerequisite or Billing) without disrupting the main schema.
+
+RESULT
+A complete ER model of a university system that defines students, courses, professors, and their interrelationships, including prerequisites, with proper constraints and rationale.
