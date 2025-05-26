@@ -107,5 +107,7 @@ Attributes placement: Most attributes are correctly associated with their respec
 
 Scalability: The design can be extended easily (e.g., adding Prerequisite or Billing) without disrupting the main schema.
 
+
 RESULT
+
 A complete ER model of a university system that defines students, courses, professors, and their interrelationships, including prerequisites, with proper constraints and rationale.
