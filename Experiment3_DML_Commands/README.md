@@ -76,19 +76,26 @@ and job_id LIKE '%MAN';
 ```
 **Output:**
 
-<img width="1246" height="385" alt="439658101-e94762a8-ad0c-492f-9093-4c882dcc6471" src="https://github.com/user-attachments/assets/c864b8a3-9a94-4ab5-bac2-bdcf47fd6efa" />
+<img width="1151" height="274" alt="438711841-cd7d0fc7-ea44-4d43-aae0-0d8f5c592dde" src="https://github.com/user-attachments/assets/f3f79bdf-1a84-496f-94b2-b1094f31dc1c" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="949" height="614" alt="438711968-a5cc9cd3-1df5-443d-b76b-55953b47d747" src="https://github.com/user-attachments/assets/1c71294b-97de-497a-987e-754812338a79" />
 
-```sql
--- Paste your SQL code below for Question 3
+## SQL Code:
+```
+UPDATE SALES
+SET sell_price = sell_price + 3
+WHERE product_id IN (
+    SELECT product_id 
+    FROM PRODUCTS 
+    WHERE supplier_id = 4
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1161" height="230" alt="438712243-4154d858-e973-4537-aa69-9f77dcad49e9" src="https://github.com/user-attachments/assets/2d3c70eb-47e7-4bea-8dbc-a2fc7106684a" />
 
 **Question 4**
 ---
