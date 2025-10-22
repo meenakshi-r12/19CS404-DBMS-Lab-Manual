@@ -48,6 +48,7 @@ END;
 ```
 **Expected Output:**  
 Greater number is: 80
+
 **Output:**
 ```
 
@@ -172,6 +173,7 @@ END;
 **Expected Output:**  
 n = 1535  
 Reversed number is 5351
+
 **Output:**
 ```
 n = 1535
@@ -214,6 +216,7 @@ END;
 **Expected Output:**  
 a = 10, b = 9, c = 15  
 Largest of three number is 15
+
 **Output:**
 ```
 
@@ -226,6 +229,7 @@ Elapsed: 00:00:00.010
 ```
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
+
 
 
 
