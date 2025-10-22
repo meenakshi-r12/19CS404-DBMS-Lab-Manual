@@ -47,7 +47,7 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
-## Write a SQL statement to change the first_name column of employees table with 'John' for those employees whose department_id is 80 and gets a commission_pct below 0.35
+Write a SQL statement to change the first_name column of employees table with 'John' for those employees whose department_id is 80 and gets a commission_pct below 0.35
 
 ## SQL Code:
 ```
