@@ -63,15 +63,18 @@ and commission_pct<0.35;
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL statement to Double the salary for employees in department 20 who have a job_id ending with 'MAN'
 
-```sql
--- Paste your SQL code below for Question 2
+## sql
 ```
-
+update employees
+set salary= salary * 2
+where department_id = 20
+and job_id LIKE '%MAN';
+```
 **Output:**
 
-![Output2](output.png)
+<img width="1246" height="385" alt="439658101-e94762a8-ad0c-492f-9093-4c882dcc6471" src="https://github.com/user-attachments/assets/c864b8a3-9a94-4ab5-bac2-bdcf47fd6efa" />
 
 **Question 3**
 ---
