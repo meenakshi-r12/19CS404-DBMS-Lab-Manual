@@ -37,124 +37,81 @@ DROP VIEW view_name;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
 
-```sql
--- Paste your SQL code below for Question 1
+<img width="1053" height="377" alt="438780616-bc4ca765-6c12-453c-af56-f0a8198394fe" src="https://github.com/user-attachments/assets/38471de8-7aab-4838-9eb8-8a75a6b711d2" />
+
+**SQL Code:**
 ```
-
+SELECT *
+FROM CUSTOMERS
+WHERE ADDRESS = 'Delhi' AND AGE < 30
+ORDER BY ID;
+```
 **Output:**
 
-![Output1](output.png)
+<img width="1200" height="291" alt="438780858-164afd13-3206-4254-9deb-93d55cd8b88b" src="https://github.com/user-attachments/assets/f7904998-db3d-4ec2-b34a-d6bdb1391fc8" />
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
-```
 
 **Output:**
 
-![Output2](output.png)
+
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
-```
 
 **Output:**
 
-![Output3](output.png)
+
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
-```
 
 **Output:**
 
-![Output4](output.png)
+
 
 **Question 5**
----
--- Paste Question 5 here
 
-```sql
--- Paste your SQL code below for Question 5
-```
 
 **Output:**
 
-![Output5](output.png)
+
 
 **Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
-```
 
 **Output:**
 
-![Output6](output.png)
+
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
-```
 
 **Output:**
 
-![Output7](output.png)
+
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
-```
 
 **Output:**
 
-![Output8](output.png)
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
-```
 
 **Output:**
 
-![Output9](output.png)
+
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
-```
 
 **Output:**
 
-![Output10](output.png)
+
 
 
 ## RESULT
