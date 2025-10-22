@@ -47,23 +47,25 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
-Write a SQL statement to change the first_name column of employees table with 'John' for those employees whose department_id is 80 and gets a commission_pct below 0.35
+<img width="979" height="232" alt="438711302-3fb5b196-fd57-4e9c-8d03-4e445dacb453" src="https://github.com/user-attachments/assets/1020ae83-5961-4709-8f60-627465d5f8a1" />
+
 
 ## SQL Code:
 ```
-update employees
-set first_name = 'John'
-where department_id = 80
-and commission_pct<0.35;
+UPDATE products
+SET product_name = 'Grapefruit'
+WHERE product_id = 4;
 ```
 **Output:**
 
-<img width="1257" height="556" alt="439655581-94375e14-6e23-4da1-a33c-adcdad40e93e" src="https://github.com/user-attachments/assets/bf58e46c-8e0f-4453-aa22-995075d5425f" />
+<img width="1002" height="148" alt="438711533-450e752a-8c92-4174-94ef-f60a21dce154" src="https://github.com/user-attachments/assets/6fc2804a-c842-4462-9382-128751db4a83" />
+
 
 
 **Question 2**
 ---
-Write a SQL statement to Double the salary for employees in department 20 who have a job_id ending with 'MAN'
+
+<img width="1032" height="389" alt="438711662-58478acf-17ff-41bf-805b-a990e525e4a8" src="https://github.com/user-attachments/assets/fd680f6e-14e4-4e55-84d0-a71445992e7c" />
 
 ## sql
 ```
