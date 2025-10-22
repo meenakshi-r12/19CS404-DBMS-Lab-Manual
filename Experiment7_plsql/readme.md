@@ -115,7 +115,7 @@ n = 7
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 
 **Output:**
-
+```
 Fibonacci sequence:
 0
 1
@@ -129,7 +129,7 @@ Fibonacci sequence:
 PL/SQL procedure successfully completed.
 
 Elapsed: 00:00:00.008
-
+```
 ## 4. Write a PL/SQL Program to display the number in Reverse Order
 
 ### Steps:
@@ -156,6 +156,7 @@ Largest of three number is 15
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
+
 
 
 
