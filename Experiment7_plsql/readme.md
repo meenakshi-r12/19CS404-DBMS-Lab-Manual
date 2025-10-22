@@ -58,11 +58,27 @@ Greater number is: 80
 - Initialize a `sum` variable to 0.
 - Use a `WHILE` loop to iterate from 1 to `n`, adding each number to the sum.
 - Display the result using `DBMS_OUTPUT.PUT_LINE`.
+### Program:
+```
+SET SERVEROUTPUT ON;
 
+DECLARE
+    n NUMBER := 10;       
+    i NUMBER := 1;        
+    total_sum NUMBER := 0; 
+BEGIN
+    WHILE i <= n LOOP
+        total_sum := total_sum + i;
+        i := i + 1;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Sum of first ' || n || ' natural numbers is: ' || total_sum);
+END;
+```
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
-
----
+**Output:**
+<img width="1920" height="1080" alt="Screenshot (207)" src="https://github.com/user-attachments/assets/10ee1fe7-bb85-4395-aa94-d2ce9c9e46da" />
 
 ## 3. Write a PL/SQL program to generate Fibonacci series
 
@@ -104,5 +120,6 @@ Largest of three number is 15
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
+
 
 
