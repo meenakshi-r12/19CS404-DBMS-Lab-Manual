@@ -47,13 +47,15 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Write a SQL statement to change the first_name column of employees table with 'John' for those employees whose department_id is 80 and gets a commission_pct below 0.35
+## Write a SQL statement to change the first_name column of employees table with 'John' for those employees whose department_id is 80 and gets a commission_pct below 0.35
 
--- update employees
+## SQL Code:
+```
+update employees
 set first_name = 'John'
 where department_id = 80
 and commission_pct<0.35;
-
+```
 **Output:**
 
 <img width="1257" height="556" alt="439655581-94375e14-6e23-4da1-a33c-adcdad40e93e" src="https://github.com/user-attachments/assets/bf58e46c-8e0f-4453-aa22-995075d5425f" />
