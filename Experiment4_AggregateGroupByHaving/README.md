@@ -37,16 +37,21 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
 
-```sql
--- Paste your SQL code below for Question 1
+<img width="1029" height="242" alt="438775375-6d478a1e-f402-4d9b-b1b4-82acd1ca3b6a" src="https://github.com/user-attachments/assets/4db49a5c-5680-4af5-9359-4eede6c0b863" />
+
+**SQL Code:**
 ```
-
+SELECT Diagnosis, COUNT(*) AS DiagnosisCount
+FROM MedicalRecords
+GROUP BY Diagnosis
+ORDER BY DiagnosisCount DESC
+LIMIT 1;
+```
 **Output:**
 
-![Output1](output.png)
+<img width="837" height="295" alt="438775624-21e78e1e-a092-4e23-a4f1-df3f6255446b" src="https://github.com/user-attachments/assets/08a2991f-1336-4654-ae58-eaa53e614bd3" />
+
 
 **Question 2**
 ---
