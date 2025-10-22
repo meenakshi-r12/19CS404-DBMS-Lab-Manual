@@ -75,11 +75,31 @@ END;
 - Insert some sample data into the table.
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
-
+**Program:**
+```
+DECLARE
+   CURSOR emp_cur IS
+      SELECT emp_name, designation FROM employees1;
+   v_name employees1.emp_name%TYPE;
+   v_desg employees1.designation%TYPE;
+BEGIN
+   OPEN emp_cur;
+   LOOP
+      FETCH emp_cur INTO v_name, v_desg;
+      EXIT WHEN emp_cur%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE('Name: ' || v_name || ', Designation: ' || v_desg);
+   END LOOP;
+   CLOSE emp_cur;
+EXCEPTION
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+```
 **Output:**  
 The program should display the employee details or an error message.
+```
 
----
+
 
 ### **Question 2: Parameterized Cursor with Exception Handling**
 
