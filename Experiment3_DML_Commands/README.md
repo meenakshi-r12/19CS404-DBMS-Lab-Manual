@@ -99,87 +99,106 @@ WHERE product_id IN (
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="1116" height="301" alt="438712363-aa005081-072e-4412-8adb-6f500afeb345" src="https://github.com/user-attachments/assets/ee6012f6-145b-4df0-a49a-570052ea81da" />
 
-```sql
--- Paste your SQL code below for Question 4
+## SQL Code:
+```
+UPDATE sales
+SET total_sell_price = quantity * sell_price
+WHERE product_id = 10;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1163" height="333" alt="438712563-a8ddecbd-e86a-480f-b302-3c8e0bdec3a5" src="https://github.com/user-attachments/assets/379460fe-40e9-4c61-b8e7-e843df5e1824" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1116" height="406" alt="438712671-4851b1e3-8122-4449-85f2-a87cf346ca0a" src="https://github.com/user-attachments/assets/340a97d8-4336-4abc-97eb-78ca5c907a21" />
 
-```sql
--- Paste your SQL code below for Question 5
+## SQL Code:
+```
+UPDATE employees
+SET email = 'Unavailable';
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="742" height="369" alt="438712973-61fe882b-be3b-4d18-9d74-055e18806cbe" src="https://github.com/user-attachments/assets/b74dbb2c-e602-494e-b3e2-fa74774a4fe6" />
+
+
 
 **Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
+<img width="1258" height="286" alt="438713138-cf249de4-51d1-4571-b684-3cbcabf18f1e" src="https://github.com/user-attachments/assets/e2c6e149-a491-4327-b269-67d7c93c1854" />
+
+## SQL Code:
 ```
-
+DELETE FROM customer
+WHERE GRADE = 2;
+```
 **Output:**
 
-![Output6](output.png)
+<img width="627" height="466" alt="438713353-b3b16aa3-a2d2-4974-9955-ed1a57cd9156" src="https://github.com/user-attachments/assets/85e7c686-f9f6-4f56-aec5-efd91f56fa94" />
+
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
+<img width="1242" height="262" alt="438713445-4065dd95-30d9-43f4-a790-ff72adce9e33" src="https://github.com/user-attachments/assets/dd91f0c8-75a1-4725-a001-5701b75d9bc9" />
+
+## SQL Code:
+```
+DELETE FROM customer
+WHERE CUST_COUNTRY NOT IN ('India', 'USA');
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="971" height="306" alt="438713966-f4560ca2-1fbc-476d-b647-33d71db7d372" src="https://github.com/user-attachments/assets/0bd0267c-7183-4717-80ca-5f872653a4cd" />
+
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
+<img width="1283" height="236" alt="438714211-7f7a74a1-870f-4a1f-8b31-df3bc457e045" src="https://github.com/user-attachments/assets/f6d707b8-3690-4830-95f1-fd369d99da1a" />
+
+## SQL Code:
+```
+DELETE FROM customer
+WHERE GRADE >= 2;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="606" height="395" alt="438714450-1e0da64d-81c1-4493-aed7-9e30ea6eef28" src="https://github.com/user-attachments/assets/573f0d9d-6ec5-44ac-aee7-9eb854816eb2" />
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+<img width="1226" height="175" alt="438714567-6582b276-3672-4426-b317-7549c9b32a9d" src="https://github.com/user-attachments/assets/a2925056-9dac-4d3e-ae00-5a490e10c6ce" />
+
+## SQL Code:
 ```
-
+DELETE FROM Doctors
+WHERE specialization = 'Pediatrics'
+  AND first_name = 'Michael';
+```
 **Output:**
 
-![Output9](output.png)
+<img width="983" height="299" alt="438714705-2d9ca326-978a-42e2-a707-7b52de0a1324" src="https://github.com/user-attachments/assets/1042bbba-a5fd-4aa7-becf-dae61bf682e1" />
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
+<img width="1261" height="235" alt="438714835-5cdc5453-a0c6-4290-b442-dffb772c27e9" src="https://github.com/user-attachments/assets/9d3fd810-c2c9-430d-a8e7-90257a873e57" />
+
+## SQL Code:
 ```
-
+DELETE FROM customer
+WHERE AGENT_CODE IN ('A003', 'A008');
+```
 **Output:**
 
-![Output10](output.png)
+<img width="798" height="709" alt="438715046-46f39bd1-21b8-4724-b47b-53099e272de6" src="https://github.com/user-attachments/assets/0e25e3f9-b1a4-4450-a889-a7f816abcec0" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
