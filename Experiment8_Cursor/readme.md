@@ -98,6 +98,7 @@ END;
 **Output:**  
 The program should display the employee details or an error message.
 ```
+<img width="267" height="75" alt="444880510-c085f98d-5fdc-4e67-bd8d-6e4978dbfd6c" src="https://github.com/user-attachments/assets/79299ec6-dbb4-4c58-9d98-01368d2badf5" />
 
 
 
