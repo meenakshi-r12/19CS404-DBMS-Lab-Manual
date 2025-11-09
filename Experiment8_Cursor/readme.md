@@ -171,10 +171,42 @@ The program should display the employee details within the specified salary rang
 - Use a cursor FOR loop to fetch and display employee names along with their department numbers.
 - Implement exception handling to catch the relevant exceptions.
 
+**Program**
+```
+SELECT table_name FROM user_tables WHERE table_name = 'EMPLOYEES1';
+
+ALTER TABLE employees1 ADD (dept_no NUMBER);
+
+UPDATE employees1 SET dept_no = 10 WHERE emp_id = 1;
+UPDATE employees1 SET dept_no = 20 WHERE emp_id = 2;
+UPDATE employees1 SET dept_no = 30 WHERE emp_id = 3;
+UPDATE employees1 SET dept_no = 40 WHERE emp_id = 4;
+
+COMMIT;
+
+DECLARE
+   found BOOLEAN := FALSE;
+BEGIN
+   FOR emp_rec IN (SELECT emp_name, dept_no FROM employees1) LOOP
+      DBMS_OUTPUT.PUT_LINE('Name: ' || emp_rec.emp_name || ', Dept No: ' || emp_rec.dept_no);
+      found := TRUE;
+   END LOOP;
+   IF NOT found THEN
+      RAISE NO_DATA_FOUND;
+   END IF;
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('No employees found.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
+END;
+/
+```
 **Output:**  
+
 The program should display employee names with their department numbers or the appropriate error message if no data is found.
 
----
+<img width="202" height="73" alt="444882180-c5ef1362-224d-4f56-b116-eb36e4706330" src="https://github.com/user-attachments/assets/d18bc862-5649-45f7-8fb4-82ad4bf958a7" />
 
 ### **Question 4: Cursor with `%ROWTYPE` and Exception Handling**
 
@@ -190,10 +222,37 @@ The program should display employee names with their department numbers or the a
 - Declare a cursor using `%ROWTYPE` to fetch complete rows from the `employees` table.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
+**Program**
+```
+DECLARE
+   CURSOR emp_cur IS SELECT * FROM employees;
+   emp_rec employees%ROWTYPE;
+   found BOOLEAN := FALSE;
+BEGIN
+   OPEN emp_cur;
+   LOOP
+      FETCH emp_cur INTO emp_rec;
+      EXIT WHEN emp_cur%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE('ID: ' || emp_rec.emp_id || ', Name: ' || emp_rec.emp_name ||
+                           ', Designation: ' || emp_rec.designation || ', Salary: ' || emp_rec.salary);
+      found := TRUE;
+   END LOOP;
+   CLOSE emp_cur;
+   IF NOT found THEN
+      RAISE NO_DATA_FOUND;
+   END IF;
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('No employee data found.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+```
 **Output:**  
+
 The program should display employee records or the appropriate error message if no data is found.
 
----
+<img width="428" height="72" alt="444882262-deaac781-298e-402d-b4fe-d41bc808e46e" src="https://github.com/user-attachments/assets/f2f04984-602e-473c-9b2a-faac4baedf65" />
 
 ### **Question 5: Cursor with FOR UPDATE Clause and Exception Handling**
 
@@ -209,10 +268,36 @@ The program should display employee records or the appropriate error message if 
 - Use a cursor with the `FOR UPDATE` clause to lock the rows of employees in a specific department and update their salary.
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
-**Output:**  
+**Program**
+```
+DECLARE
+   CURSOR emp_cur IS
+      SELECT emp_id, salary FROM employees1 WHERE dept_no = 10 FOR UPDATE;
+   v_found BOOLEAN := FALSE;
+BEGIN
+   FOR emp_rec IN emp_cur LOOP
+      UPDATE employees1 SET salary = emp_rec.salary + 1000 WHERE emp_id = emp_rec.emp_id;
+      DBMS_OUTPUT.PUT_LINE('Updated salary for emp_id: ' || emp_rec.emp_id);
+      v_found := TRUE;
+   END LOOP;
+   IF NOT v_found THEN
+      RAISE NO_DATA_FOUND;
+   END IF;
+   COMMIT;
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('No employees found in department 10.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Error during update: ' || SQLERRM);
+END;
+/
+```
+**Output:** 
+
 The program should update employee salaries and display a message, or it should display an error message if no data is found.
 
----
+<img width="307" height="107" alt="444882443-148ab107-ab8b-4710-ae8e-865b85faa4a7" src="https://github.com/user-attachments/assets/5ec9152e-101c-46f3-bf9e-f16e5f5aa43f" />
+
 
 ## RESULT
 Thus, the program successfully executed and displayed employee details using a cursor. 
