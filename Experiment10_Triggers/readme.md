@@ -30,10 +30,43 @@ END;
 - Create two tables: `employees` (for storing data) and `employee_log` (for logging the inserts).
 - Write an **AFTER INSERT** trigger on the `employees` table to log the new data into the `employee_log` table.
 
+**Program**
+```
+CREATE OR REPLACE TRIGGER trg_log_employee_insert
+AFTER INSERT ON employees
+FOR EACH ROW
+BEGIN
+   INSERT INTO employee_log (emp_id, emp_name, action_time)
+   VALUES (:NEW.emp_id, :NEW.emp_name, SYSDATE);
+END;
+```
+```
+CREATE TABLE employee_log (
+   emp_id     NUMBER,
+   emp_name   VARCHAR2(50),
+   action_time DATE
+);
+```
+```
+CREATE OR REPLACE TRIGGER trg_log_employee_insert
+AFTER INSERT ON employees
+FOR EACH ROW
+BEGIN
+   INSERT INTO employee_log (emp_id, emp_name, action_time)
+   VALUES (:NEW.emp_id, :NEW.emp_name, SYSDATE);
+END;
+```
+```
+INSERT INTO employees VALUES (201, 'Ravi', 'Intern', 3500, 40);
+SELECT * FROM employee_log;
+```
 **Expected Output:**
 - A new entry is added to the `employee_log` table each time a new record is inserted into the `employees` table.
 
----
+**Output**
+
+<img width="1405" height="554" alt="444791724-3981256a-ee9c-4c77-b035-dd8942531c6d" src="https://github.com/user-attachments/assets/18682e07-1498-4fe6-830a-3092b09babdf" />
+
 
 ## 2. Write a trigger to prevent deletion of records from a sensitive table.
 **Steps:**
@@ -75,3 +108,4 @@ END;
 
 ## RESULT
 Thus, the PL/SQL trigger programs were written and executed successfully.
+
