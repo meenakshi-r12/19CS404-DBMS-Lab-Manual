@@ -70,11 +70,12 @@ END;
 2. **OTHERS**: Any other unexpected errors during execution.
 
 **Steps:**
-
+```
 - Create an `employees` table with fields `emp_id`, `emp_name`, and `designation`.
 - Insert some sample data into the table.
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
+```
 **Program:**
 ```
 DECLARE
