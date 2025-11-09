@@ -96,7 +96,8 @@ EXCEPTION
       DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 ```
-**Output:**  
+**Output:**
+
 The program should display the employee details or an error message.
 
 <img width="267" height="75" alt="444880510-c085f98d-5fdc-4e67-bd8d-6e4978dbfd6c" src="https://github.com/user-attachments/assets/79299ec6-dbb4-4c58-9d98-01368d2badf5" />
@@ -111,16 +112,50 @@ The program should display the employee details or an error message.
 2. **OTHERS**: For any unexpected errors during the execution.
 
 **Steps:**
-
+```
 - Modify the `employees` table by adding a `salary` column.
 - Insert sample salary values for the employees.
 - Use a parameterized cursor to accept a salary range as input and fetch employees within that range.
 - Implement exception handling to catch and display relevant error messages.
+```
+**Program**
+```
+ALTER TABLE employees1 ADD salary NUMBER;
 
-**Output:**  
+UPDATE employees1 SET salary = 75000 WHERE emp_id = 1; -- Alice
+UPDATE employees1 SET salary = 60000 WHERE emp_id = 2; -- Bob
+UPDATE employees1 SET salary = 35000 WHERE emp_id = 3; -- Charlie
+UPDATE employees1 SET salary = 82000 WHERE emp_id = 4; -- Diana
+
+COMMIT;
+
+DECLARE
+   CURSOR sal_cursor(min_sal NUMBER, max_sal NUMBER) IS
+      SELECT emp_name, salary FROM employees1 WHERE salary BETWEEN min_sal AND max_sal;
+   v_name employees1.emp_name%TYPE;
+   v_salary employees1.salary%TYPE;
+   found BOOLEAN := FALSE;
+BEGIN
+   FOR rec IN sal_cursor(40000, 80000) LOOP
+      DBMS_OUTPUT.PUT_LINE('Name: ' || rec.emp_name || ', Salary: ' || rec.salary);
+      found := TRUE;
+   END LOOP;
+   IF NOT found THEN
+      RAISE NO_DATA_FOUND;
+   END IF;
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('No employees in the given salary range.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
+END;
+/
+```
+**Output:** 
+
 The program should display the employee details within the specified salary range or an error message if no data is found.
 
----
+<img width="216" height="62" alt="444880679-46b0f00f-9016-4e41-ac66-238ca21bd62e" src="https://github.com/user-attachments/assets/2422040a-87d8-4553-af28-34d550c45b4f" />
 
 ### **Question 3: Cursor FOR Loop with Exception Handling**
 
